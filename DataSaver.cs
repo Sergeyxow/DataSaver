@@ -7,10 +7,7 @@ using UnityEngine;
 
 public static class DataSaver<T> where T : class, new()
 {
-    public static T Instance
-    {
-        get => GetOrCreateInstance();
-    }
+    public static T Instance => GetOrCreateInstance();
     private static T instance;
     private static readonly string path = $"{Application.persistentDataPath}/{typeof(T).Name}.json";
 
