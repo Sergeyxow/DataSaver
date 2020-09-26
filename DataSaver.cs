@@ -10,11 +10,6 @@ public static class DataSaver<T> where T : class, new()
     public static T Instance
     {
         get => GetOrCreateInstance();
-        set
-        {
-            instance = value;
-            Save();
-        }
     }
     private static T instance;
     private static readonly string path = $"{Application.persistentDataPath}/{typeof(T).Name}.json";
